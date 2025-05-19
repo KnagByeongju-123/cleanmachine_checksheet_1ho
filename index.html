@@ -266,8 +266,11 @@
 
     // 페이지 로드 시 오늘 날짜 자동 세팅
     window.addEventListener('DOMContentLoaded', () => {
-      document.getElementById('date').value = new Date().toISOString().slice(0,10);
-    });
+  const now = new Date();
+  const utc = now.getTime() + (now.getTimezoneOffset() * 60000);
+  const koreaTime = new Date(utc + (9 * 60 * 60 * 1000));
+  document.getElementById('date').value = koreaTime.toISOString().slice(0, 10);
+});
   </script>
 </body>
 </html>

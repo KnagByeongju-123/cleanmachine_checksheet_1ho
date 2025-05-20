@@ -276,7 +276,10 @@
       document.getElementById("date").value = `${year}-${month}-${day}`;
     }
 
-    window.addEventListener("DOMContentLoaded", setDateTimeNow);
+    window.addEventListener("DOMContentLoaded", () => {
+  setDateTimeNow();
+  document.getElementById("equipmentInput").value = "1호기";
+});
   </script>
 </body>
 </html>
